@@ -6,8 +6,7 @@ import com.example.nevigationdrawer.dataClass.NotesEntity
 
 @Dao
 interface NotesDao {
-//    @Insert
-//    fun insertTittle(entity:NotesEntity)
+
     @Insert
     suspend fun insertRdbNotes(entity: NotesEntity)
     @Update
