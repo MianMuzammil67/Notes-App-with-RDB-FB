@@ -11,7 +11,8 @@
 
 
     <color name="homeScreen">#292929</color>
-    <color name="searchBg">#333333</color>
+<!--    <color name="homeScreen">#0c0c0c</color>-->
+    <color name="light_gray">#333333</color>
     <color name="yellow">#ffbd3d</color>
 
 </resources>
