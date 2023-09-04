@@ -1,3 +1,10 @@
 <resources>
-    <string name="app_name">nevigation Drawer</string>
+    <string name="app_name">Notes app (kotlin)</string>
+    <string name="tittle">Tittle</string>
+    <string name="txt_subTittle">Subtittle</string>
+    <string name="dummyDate">04_09_2023</string>
+    <string name="txtNotes">Notes</string>
+    <string name="dummy_text">dummy text</string>
+    <string name="my_notes">My Notes</string>
+    <string name="search_txt">Search Notes</string>
 </resources>

@@ -1,8 +1,8 @@
-package com.example.nevigationdrawer
+package com.example.nevigationdrawer.db.Dao
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
-import com.example.nevigationdrawer.dataClass.NotesEntity
+import com.example.nevigationdrawer.db.entiteis.NotesEntity
 
 @Dao
 interface NotesDao {

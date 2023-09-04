@@ -4,10 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/homeScreen"
-    tools:context=".UI.Activities.NewNotesActivity">
+    tools:context=".UI.Activities.UpdateNotesActivity"
+    android:background="@color/homeScreen">
+
+
     <EditText
-        android:id="@+id/etTittle"
+        android:id="@+id/etTittl"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -29,15 +31,15 @@
         android:id="@+id/tvDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/roboto"
         android:text="@string/dummyDate"
         android:textColor="#ABABAA"
+        android:fontFamily="@font/roboto"
         android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="@+id/etTittle"
-        app:layout_constraintTop_toBottomOf="@+id/etTittle" />
+        app:layout_constraintStart_toStartOf="@+id/etTittl"
+        app:layout_constraintTop_toBottomOf="@+id/etTittl" />
 
     <View
-        android:id="@+id/view2"
+        android:id="@+id/highlight"
         android:layout_width="5dp"
         android:layout_height="40dp"
         android:layout_marginTop="16dp"
@@ -56,10 +58,10 @@
         android:textColor="@color/white"
         android:textColorHint="@color/white"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="@+id/view2"
-        app:layout_constraintEnd_toEndOf="@+id/etTittle"
-        app:layout_constraintStart_toEndOf="@+id/view2"
-        app:layout_constraintTop_toTopOf="@+id/view2"
+        app:layout_constraintBottom_toBottomOf="@+id/highlight"
+        app:layout_constraintEnd_toEndOf="@+id/etTittl"
+        app:layout_constraintStart_toEndOf="@+id/highlight"
+        app:layout_constraintTop_toTopOf="@+id/highlight"
         android:autofillHints=""
         android:inputType="text" />
 
@@ -69,29 +71,27 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:autofillHints=""
-        android:background="@android:color/transparent"
         android:ems="10"
         android:hint="@string/txtNotes"
-        android:inputType="textMultiLine"
-        android:textColor="@color/white"
+        android:background="@android:color/transparent"
         android:textColorHint="@color/white"
+        android:textColor="@color/white"
+        android:inputType="textMultiLine"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/view2"
-        app:layout_constraintTop_toBottomOf="@+id/view2" />
+        app:layout_constraintStart_toStartOf="@+id/highlight"
+        app:layout_constraintTop_toBottomOf="@+id/highlight" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/btAdNotes"
+        android:id="@+id/btnUpdateNotes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="24dp"
         android:backgroundTint="@color/yellow"
         android:src="@drawable/ic_done"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:tint="@color/white"
-        />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
