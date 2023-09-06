@@ -16,4 +16,8 @@ interface NotesDao {
 
     @Query("SELECT * FROM NOTES_db")
     fun getRdbNotes() :LiveData<List<NotesEntity>>
+    @Query("SELECT * FROM NOTES_db WHERE NOTES_db.tittle LIKE :searchQuery")
+    fun searchRDBNotes(searchQuery: String):LiveData<List<NotesEntity>>
+//    @Query("SELECT * FROM NOTES_db WHERE NOTES_db.tittle LIKE :searchQuery || '%' AND NOTES_db.tittle NOT LIKE '% ' || :searchQuery || '%' COLLATE NOCASE")
+//    fun searchRDBNotes(searchQuery: String):LiveData<List<NotesEntity>>
 }

@@ -35,11 +35,10 @@ class UpdateNotesActivity : AppCompatActivity() {
         binding.btnUpdateNotes.setOnClickListener{
             val tittle  = binding.etTittl.text.toString()
             val notes  = binding.etNotes.text.toString()
-
             viewModel.updateNotes(NotesEntity(notesId.toLong(),tittle,notes))
-
             Toast.makeText(this, "Note updated Successfully", Toast.LENGTH_SHORT).show()
             startActivity(Intent(this, MainActivity::class.java))
+            finish()
         }
 
     }

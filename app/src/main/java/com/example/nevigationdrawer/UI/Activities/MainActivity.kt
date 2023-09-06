@@ -4,6 +4,8 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
@@ -45,6 +47,41 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, NewNotesActivity::class.java)
             startActivity(intent)
         }
+
+        binding.etSearch.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+                // This method is called before the text is changed
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                // This method is called when the text is changed
+                val searchText = s.toString()
+                viewModel.searchNotes(searchText).observe(this@MainActivity){
+                    adapter.list = it
+                    adapter.notifyDataSetChanged()
+                }
+            }
+
+            override fun afterTextChanged(s: Editable?) {
+                // This method is called after the text has changed
+                val searchText = s.toString()
+
+                viewModel.searchNotes("%$searchText%").observe(this@MainActivity){
+                    adapter.list = it
+                    adapter.notifyDataSetChanged()
+                }
+            }
+        })
+//        binding.etSearch.setOnEditorActionListener(object : TextView.OnEditorActionListener {
+//            override fun onEditorAction(v: TextView?, actionId: Int, event: KeyEvent?): Boolean {
+//                if (actionId == EditorInfo.IME_ACTION_SEARCH) {
+//                    viewModel.searchNotes()
+//                    return true
+//                }
+//                return false
+//            }
+//        })
+
 
     }
 }

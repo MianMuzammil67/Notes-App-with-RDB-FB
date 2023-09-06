@@ -36,6 +36,7 @@ class NewNotesActivity : AppCompatActivity() {
                 viewModel.insertNotes(NotesEntity(0, tittle, notes))
                 Toast.makeText(this, "Note Added Successfully", Toast.LENGTH_SHORT).show()
                 startActivity(Intent(this, MainActivity::class.java))
+                finish()
             }else{
                 Toast.makeText(this, "Please Enter Something", Toast.LENGTH_SHORT).show()
             }
